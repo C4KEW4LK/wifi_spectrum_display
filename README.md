@@ -105,6 +105,8 @@ Install these libraries via Arduino Library Manager:
 5. Configure display mode, colors, brightness, etc.
 6. Click "Save & Exit" or double-press button to save and close AP
 
+![Web UI Screenshot](images/webui%20screenshot.jpg)
+
 ### Settings
 
 | Setting | Description |
