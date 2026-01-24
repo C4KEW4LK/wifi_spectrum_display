@@ -1,0 +1,367 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg-layout" width="360" height="358.5" viewBox="0 0 360 358.5"><defs><style>
+#svg-layout text {
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+}
+
+#svg-layout .wireGroup {
+  stroke: #2d3142;
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+
+#svg-layout .arrowGroup path {
+  stroke: #404660;
+  stroke-width: 1;
+  stroke-linecap: round;
+  fill: none;
+}
+
+#svg-layout .wireGroup.wire-color-metal path,
+#svg-layout .arrowGroup.arrow-color-metal path {
+  stroke: #7b7d86;
+}
+#svg-layout .wireGroup.wire-color-black path,
+#svg-layout .arrowGroup.arrow-color-black path {
+  stroke: #2d3142;
+}
+#svg-layout .wireGroup.wire-color-red path,
+#svg-layout .arrowGroup.arrow-color-red path {
+  stroke: #e86b59;
+}
+#svg-layout .wireGroup.wire-color-white path,
+#svg-layout .arrowGroup.arrow-color-white path {
+  stroke: #f0f0f0;
+}
+#svg-layout .wireGroup.wire-color-yellow path,
+#svg-layout .arrowGroup.arrow-color-yellow path {
+  stroke: #fbdd71;
+}
+#svg-layout .wireGroup.wire-color-orange path,
+#svg-layout .arrowGroup.arrow-color-orange path {
+  stroke: #f7a541;
+}
+#svg-layout .wireGroup.wire-color-brown path,
+#svg-layout .arrowGroup.arrow-color-brown path {
+  stroke: #bf6030;
+}
+#svg-layout .wireGroup.wire-color-gray path,
+#svg-layout .arrowGroup.arrow-color-gray path {
+  stroke: #a4a7b3;
+}
+#svg-layout .wireGroup.wire-color-green path,
+#svg-layout .arrowGroup.arrow-color-green path {
+  stroke: #67b262;
+}
+#svg-layout .wireGroup.wire-color-purple path,
+#svg-layout .arrowGroup.arrow-color-purple path {
+  stroke: #614d99;
+}
+#svg-layout .wireGroup.wire-color-blue path,
+#svg-layout .arrowGroup.arrow-color-blue path {
+  stroke: #2297bf;
+}
+
+</style><marker id="arrowHead-layout" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="5" refY="5" orient="auto" fill="#404660"><path d="M 0 0 L 10 5 L 0 10 z"/></marker></defs><rect width="100%" height="100%" fill="white"/><g class="circuit-contents layout" transform="translate(-2017.5, -1942.5)"><g data-source-id="1a8028631af6d7decc71b16067da3733" data-source-name="Seeed XIAO ESP32C3" data-width="55" data-height="65" class="component" id="part_1" transform="translate(2210,2050) scale(1,1) rotate(0,0,0)"><rect class="helper-box" x="0" y="0" width="55" height="65" fill="none"/>
+ <g stroke-width="0">
+  <path d="M55,11.25v-1.25c0-2.76-2.24-5-5-5H5C2.24,5,0,7.24,0,10v1.25c.69,0,1.25.56,1.25,1.25S.69,13.75,0,13.75v5c.69,0,1.25.56,1.25,1.25S.69,21.25,0,21.25v5c.69,0,1.25.56,1.25,1.25S.69,28.75,0,28.75v5c.69,0,1.25.56,1.25,1.25S.69,36.25,0,36.25v5c.69,0,1.25.56,1.25,1.25S.69,43.75,0,43.75v5c.69,0,1.25.56,1.25,1.25S.69,51.25,0,51.25v5c.69,0,1.25.56,1.25,1.25S.69,58.75,0,58.75v1.25C0,62.76,2.24,65,5,65h45c2.76,0,5-2.24,5-5v-1.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-5c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-5c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-5c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-5c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-5c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-5c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25ZM5,58.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM5,51.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM5,43.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM5,36.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM5,28.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM5,21.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM5,13.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,58.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,51.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,43.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,36.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,28.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,21.25c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25ZM50,13.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25,1.25.56,1.25,1.25-.56,1.25-1.25,1.25Z" fill="#404660"/>
+  <path d="M6.25,12.5c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,10.5v.75c.69,0,1.25.56,1.25,1.25S.69,13.75,0,13.75v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z" fill="#f7a541"/>
+  <path d="M6.25,20c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,18v.75c.69,0,1.25.56,1.25,1.25S.69,21.25,0,21.25v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z" fill="#f7a541"/>
+ </g>
+ <g fill="#a4a7b3" stroke-width="0">
+  <rect transform="translate(30 50) rotate(-90)" x="37.5" y="8.75" width="5" height="2.5" rx="1" ry="1"/>
+  <rect transform="translate(19.37 60.63) rotate(-90)" x="37.5" y="19.38" width="5" height="2.5" rx="1" ry="1"/>
+  <rect transform="translate(5 25) rotate(-90)" x="12.5" y="8.75" width="5" height="2.5" rx="1" ry="1"/>
+  <rect transform="translate(-5.63 35.63) rotate(-90)" x="12.5" y="19.38" width="5" height="2.5" rx="1" ry="1"/>
+ </g>
+ <path transform="translate(16.25 38.75) rotate(-90)" d="M17.49-1.25h21.26v25h-21.26c-.68,0-1.24-.56-1.24-1.24V0c0-.68.56-1.24,1.24-1.24Z" fill="#d8d9db" stroke-width="0"/>
+ <g fill="#a4a7b3" stroke-width="0">
+  <rect x="36.25" y="22.5" width="1.25" height="2.5"/>
+  <rect x="33.75" y="22.5" width="1.25" height="2.5"/>
+  <rect x="20" y="22.5" width="1.25" height="2.5"/>
+  <rect x="17.5" y="22.5" width="1.25" height="2.5"/>
+  <rect x="31.83" y="22.5" width=".67" height="2.5"/>
+  <rect x="30.5" y="22.5" width=".67" height="2.5"/>
+  <rect x="29.17" y="22.5" width=".67" height="2.5"/>
+  <rect x="27.83" y="22.5" width=".67" height="2.5"/>
+  <rect x="26.5" y="22.5" width=".67" height="2.5"/>
+  <rect x="25.17" y="22.5" width=".67" height="2.5"/>
+  <rect x="23.83" y="22.5" width=".67" height="2.5"/>
+  <rect x="22.5" y="22.5" width=".67" height="2.5"/>
+ </g>
+ <g stroke-width="0">
+  <path d="m36.25 18.75h-2.5c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25h1.25v1.25h2.5v-2.5c0-0.69-0.56-1.25-1.25-1.25z" fill="#7b7d86"/>
+  <path d="m18.75 18.75h2.5c0.69 0 1.25 0.56 1.25 1.25s-0.56 1.25-1.25 1.25h-1.25v1.25h-2.5v-2.5c0-0.69 0.56-1.25 1.25-1.25z" fill="#7b7d86"/>
+  <rect transform="translate(66.25 30) rotate(180)" x="31.25" y="13.75" width="3.75" height="2.5" rx="1.25" ry="1.25" fill="#e7e8eb"/>
+  <rect transform="translate(43.75 30) rotate(180)" x="20" y="13.75" width="3.75" height="2.5" rx="1.25" ry="1.25" fill="#e7e8eb"/>
+ </g>
+ <g fill="#f7a541" stroke-width="0">
+  <path d="M6.25,27.5c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,25.5v.75c.69,0,1.25.56,1.25,1.25S.69,28.75,0,28.75v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z"/>
+  <path d="M6.25,35c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,33v.75c.69,0,1.25.56,1.25,1.25S.69,36.25,0,36.25v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z"/>
+  <path d="M6.25,42.5c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,40.5v.75c.69,0,1.25.56,1.25,1.25S.69,43.75,0,43.75v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z"/>
+  <path d="M6.25,50c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,48v.75c.69,0,1.25.56,1.25,1.25S.69,51.25,0,51.25v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z"/>
+  <path d="M6.25,57.5c0,.69-.56,1.25-1.25,1.25s-1.25-.56-1.25-1.25.56-1.25,1.25-1.25,1.25.56,1.25,1.25ZM0,55.5v.75c.69,0,1.25.56,1.25,1.25S.69,58.75,0,58.75v.75h5c1.1,0,2-.9,2-2h0c0-1.1-.9-2-2-2H0Z"/>
+  <path d="M48.75,57.5c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,59.5v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+  <path d="M48.75,50c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,52v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+  <path d="M48.75,42.5c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,44.5v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+  <path d="M48.75,35c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,37v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+  <path d="M48.75,27.5c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,29.5v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+  <path d="M48.75,20c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,22v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+  <path d="M48.75,12.5c0-.69.56-1.25,1.25-1.25s1.25.56,1.25,1.25-.56,1.25-1.25,1.25-1.25-.56-1.25-1.25ZM55,14.5v-.75c-.69,0-1.25-.56-1.25-1.25s.56-1.25,1.25-1.25v-.75h-5c-1.1,0-2,.9-2,2h0c0,1.1.9,2,2,2h5Z"/>
+ </g>
+ <rect x="10" y="26.25" width="33.75" height="28.75" rx="2" ry="2" fill="#d8d9db" stroke-width="0"/>
+ <g fill="#a4a7b3" stroke-width="0">
+  <rect x="8.75" y="58.75" width="1.25" height="3.75"/>
+  <rect x="18.75" y="58.75" width="1.25" height="3.75"/>
+  <rect x="33.75" y="58.75" width="1.25" height="3.75"/>
+  <rect x="43.75" y="58.75" width="1.25" height="3.75"/>
+ </g>
+ <g stroke-width="0">
+  <rect x="10" y="57.5" width="8.75" height="6.25" fill="#d8d9db"/>
+  <rect x="35" y="57.5" width="8.75" height="6.25" fill="#d8d9db"/>
+  <circle cx="14.38" cy="60.62" r="2.5" fill="#2d3142"/>
+  <circle cx="39.38" cy="60.62" r="2.5" fill="#2d3142"/>
+  <rect transform="translate(53.12 -36.88) rotate(90)" x="44.38" y="7.5" width="1.25" height="1.25" fill="#f7a541"/>
+  <rect transform="translate(54.06 -37.81) rotate(90)" x="45.31" y="7.81" width="1.25" height=".63" fill="#a4a7b3"/>
+  <rect transform="translate(52.19 -35.94) rotate(90)" x="43.44" y="7.81" width="1.25" height=".62" fill="#a4a7b3"/>
+ </g>
+ <text transform="translate(13.31 37.4)" fill="#404660"><tspan font-family="Nunito-ExtraBold, Nunito" font-size="5" font-weight="700" letter-spacing="-.05em"><tspan x="0" y="0">seeed </tspan><tspan x="13.64" y="0">s</tspan><tspan x="15.82" y="0">tudio</tspan></tspan><tspan font-family="Nunito-Medium, Nunito" font-size="4" font-weight="500" letter-spacing="-.05em"><tspan x="8.29" y="4.8">Model</tspan></tspan><tspan font-family="Nunito-Medium, Nunito" font-size="4" font-weight="500"><tspan x="-.37" y="9.6" letter-spacing="-.05em">xi</tspan><tspan x="2.9" y="9.6" letter-spacing="-.06em">A</tspan><tspan x="5.58" y="9.6" letter-spacing="-.05em">O-</tspan><tspan x="9.97" y="9.6" letter-spacing="-.06em">E</tspan><tspan x="12.07" y="9.6" letter-spacing="-.05em">SP32-C3</tspan></tspan></text>
+ <g fill="#a4a7b3" stroke-width="0">
+  <rect transform="translate(82.5 38.75) rotate(90)" x="20" y="60" width="3.75" height="1.25"/>
+  <rect transform="translate(92.5 28.75) rotate(90)" x="30" y="60" width="3.75" height="1.25"/>
+  <rect transform="translate(81.88 31.87) rotate(90)" x="24.38" y="55.63" width="1.25" height="2.5"/>
+  <rect transform="translate(85.63 28.12) rotate(90)" x="28.13" y="55.62" width="1.25" height="2.5"/>
+ </g>
+ <g stroke-width="0">
+  <rect transform="translate(87.5 33.75) rotate(90)" x="23.75" y="56.25" width="6.25" height="8.75" rx="1" ry="1" fill="#d8d9db"/>
+  <circle cx="26.88" cy="60.62" r=".63" fill="#f7a541"/>
+  <path d="M26.88,59c.9,0,1.62.73,1.62,1.62s-.73,1.62-1.62,1.62-1.62-.73-1.62-1.62.73-1.62,1.62-1.62M26.88,58.75c-1.04,0-1.88.84-1.88,1.88s.84,1.88,1.88,1.88,1.88-.84,1.88-1.88-.84-1.88-1.88-1.88h0Z" fill="#a4a7b3"/>
+ </g>
+ <g fill="none" stroke-width="0">
+  <circle class="connection_point" cx="5" cy="12.5" r="1" data-pin-name="pin1"/>
+  <circle class="connection_point" cx="5" cy="20" r="1" data-pin-name="pin2"/>
+  <circle class="connection_point" cx="5" cy="27.5" r="1" data-pin-name="pin3"/>
+  <circle class="connection_point" cx="5" cy="35" r="1" data-pin-name="pin4"/>
+  <circle class="connection_point" cx="5" cy="42.5" r="1" data-pin-name="pin5"/>
+  <circle class="connection_point" cx="5" cy="50" r="1" data-pin-name="pin6"/>
+  <circle class="connection_point" cx="5" cy="57.5" r="1" data-pin-name="pin7"/>
+  <circle class="connection_point" cx="50" cy="12.5" r="1" data-pin-name="pin8"/>
+  <circle class="connection_point" cx="50" cy="20" r="1" data-pin-name="pin9"/>
+  <circle class="connection_point" cx="50" cy="27.5" r="1" data-pin-name="pin10"/>
+  <circle class="connection_point" cx="50" cy="35" r="1" data-pin-name="pin11"/>
+  <circle class="connection_point" cx="50" cy="42.5" r="1" data-pin-name="pin12"/>
+  <circle class="connection_point" cx="50" cy="50" r="1" data-pin-name="pin13"/>
+  <circle class="connection_point" cx="50" cy="57.5" r="1" data-pin-name="pin14"/>
+ </g>
+<text class="component-reference component-text moveable-text locked" font-size="4.5px" x="45" y="5" style="display: none;">U1</text><text class="component-value component-text moveable-text locked" font-size="4.5px" x="45" y="10" style="display: none;"/></g><g data-source-id="79046f6a7dc7d1bfb0bd6bf9c690fae8" data-source-name="LED Strip (3-wire addressable RGB)" data-width="240" data-height="25" class="component" id="part_3" transform="translate(2225,2107.5) scale(1,1) rotate(90,120,12.5)"><rect class="helper-box" x="0" y="0" width="240" height="25" fill="none"/>
+ <g stroke-width="0">
+  <rect width="240" height="25" fill="#d8d9db"/>
+  <rect x="33.75" y="6.25" width="12.5" height="12.5" fill="#e7e8eb"/>
+  <circle cx="40" cy="12.5" r="5" fill="#fbdd71"/>
+  <path d="M44.37,12.5h-1.31c-.48,0-.87.39-.87.88v2.91c-.64.38-1.39.59-2.19.59-1.1,0-2.11-.41-2.88-1.09h3.1c.48,0,.88-.39.88-.87v-1.53c0-.48-.39-.88-.88-.88h-4.59c0-.38.04-.74.15-1.09h2.26c.48,0,.88-.39.88-.88v-.44c0-.48-.39-.88-.88-.88h-.91c.77-.68,1.78-1.09,2.88-1.09.8,0,1.55.22,2.19.6v.5h-1.31c-.48,0-.88.39-.88.88v.44c0,.48.39.88.88.88h3.36c.1.35.14.72.14,1.09Z" fill="#fdebaa"/>
+ </g>
+ <g fill="#a4a7b3" stroke-width="0">
+  <path d="M36.25,5h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path d="M43.75,5h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path transform="translate(87.5 38.75) rotate(180)" d="M43.75,18.75h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path transform="translate(72.5 38.75) rotate(180)" d="M36.25,18.75h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+ </g>
+ <path d="M33.36,3.75h11.64c.23,0,.45.11.61.29l1.64,1.91c.16.19.25.44.25.71v13.59c0,.55-.38,1-.86,1h-13.29c-.47,0-.86-.45-.86-1V4.75c0-.55.38-1,.86-1Z" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <g stroke-width="0">
+  <rect x=".62" y="2.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="5" cy="5" r="1.25" fill="#d99d5b"/>
+  <rect x=".63" y="10" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="5" cy="12.5" r="1.25" fill="#d99d5b"/>
+  <rect x=".62" y="17.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="5" cy="20" r="1.25" fill="#d99d5b"/>
+ </g>
+ <g fill="#404660" font-family="Nunito-Bold, Nunito" font-size="4" font-weight="700" letter-spacing="-.05em">
+  <text transform="translate(10 6.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">GND</tspan></text>
+  <text transform="translate(10 13.75)" font-variation-settings="'wght' 700"><tspan x="0" y="0">DIN</tspan></text>
+  <text transform="translate(10 21.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">+5V</tspan></text>
+ </g>
+ <g stroke-width="0">
+  <rect x="70.62" y="2.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="75" cy="5" r="1.25" fill="#d99d5b"/>
+  <rect x="70.63" y="10" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="75" cy="12.5" r="1.25" fill="#d99d5b"/>
+  <rect x="70.62" y="17.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="75" cy="20" r="1.25" fill="#d99d5b"/>
+ </g>
+ <g fill="#404660">
+  <g font-family="Nunito-Bold, Nunito" font-size="4" font-weight="700" letter-spacing="-.05em">
+   <text transform="translate(61.42 6.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">GND</tspan></text>
+   <text transform="translate(58.98 13.75)" font-variation-settings="'wght' 700"><tspan x="0" y="0">DOUT</tspan></text>
+   <text transform="translate(62.75 21.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">+5V</tspan></text>
+  </g>
+  <rect transform="translate(39.37 64.38) rotate(-90)" x="49.38" y="10.63" width="5" height="3.75" stroke-width="0"/>
+ </g>
+ <rect transform="translate(35.62 68.12) rotate(-90)" x="50.62" y="14.38" width="2.5" height="3.75" fill="#a4a7b3" stroke-width="0"/>
+ <rect transform="translate(43.12 60.62) rotate(-90)" x="50.62" y="6.88" width="2.5" height="3.75" fill="#a4a7b3" stroke-width="0"/>
+ <path d="M48.75,8.75v-1.5c0-.55.37-1,.83-1h.21s4.17,0,4.17,0h.21c.46,0,.83.45.83,1v1.5" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <path d="M48.75,16.25v1.5c0,.55.37,1,.83,1h.21s4.17,0,4.17,0h.21c.46,0,.83-.45.83-1v-1.5" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <g stroke-width="0">
+  <polygon points="20 11.25 20 13.75 27.5 13.75 27.5 15 30 12.5 27.5 10 27.5 11.25" fill="#404660"/>
+  <rect x="113.75" y="6.25" width="12.5" height="12.5" fill="#e7e8eb"/>
+  <circle cx="120" cy="12.5" r="5" fill="#fbdd71"/>
+  <path d="M124.37,12.5h-1.31c-.48,0-.87.39-.87.88v2.91c-.64.38-1.39.59-2.19.59-1.1,0-2.11-.41-2.88-1.09h3.1c.48,0,.88-.39.88-.87v-1.53c0-.48-.39-.88-.88-.88h-4.59c0-.38.04-.74.15-1.09h2.26c.48,0,.88-.39.88-.88v-.44c0-.48-.39-.88-.88-.88h-.91c.77-.68,1.78-1.09,2.88-1.09.8,0,1.55.22,2.19.6v.5h-1.31c-.48,0-.88.39-.88.88v.44c0,.48.39.88.88.88h3.36c.1.35.14.72.14,1.09Z" fill="#fdebaa"/>
+ </g>
+ <g fill="#a4a7b3" stroke-width="0">
+  <path d="M116.25,5h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path d="M123.75,5h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path transform="translate(247.5 38.75) rotate(180)" d="M123.75,18.75h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path transform="translate(232.5 38.75) rotate(180)" d="M116.25,18.75h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+ </g>
+ <path d="M113.36,3.75h11.64c.23,0,.45.11.61.29l1.64,1.91c.16.19.25.44.25.71v13.59c0,.55-.38,1-.86,1h-13.29c-.47,0-.86-.45-.86-1V4.75c0-.55.38-1,.86-1Z" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <g fill="#404660">
+  <g font-family="Nunito-Bold, Nunito" font-size="4" font-weight="700" letter-spacing="-.05em">
+   <text transform="translate(90 6.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">GND</tspan></text>
+   <text transform="translate(90 13.75)" font-variation-settings="'wght' 700"><tspan x="0" y="0">DIN</tspan></text>
+   <text transform="translate(90 21.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">+5V</tspan></text>
+   <text transform="translate(141.42 6.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">GND</tspan></text>
+   <text transform="translate(138.98 13.75)" font-variation-settings="'wght' 700"><tspan x="0" y="0">DOUT</tspan></text>
+   <text transform="translate(142.75 21.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">+5V</tspan></text>
+  </g>
+  <rect transform="translate(119.37 144.38) rotate(-90)" x="129.38" y="10.63" width="5" height="3.75" stroke-width="0"/>
+ </g>
+ <rect transform="translate(115.62 148.12) rotate(-90)" x="130.62" y="14.38" width="2.5" height="3.75" fill="#a4a7b3" stroke-width="0"/>
+ <rect transform="translate(123.12 140.62) rotate(-90)" x="130.62" y="6.88" width="2.5" height="3.75" fill="#a4a7b3" stroke-width="0"/>
+ <path d="M128.75,8.75v-1.5c0-.55.37-1,.83-1h.21s4.17,0,4.17,0h.21c.46,0,.83.45.83,1v1.5" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <path d="M128.75,16.25v1.5c0,.55.37,1,.83,1h.21s4.17,0,4.17,0h.21c.46,0,.83-.45.83-1v-1.5" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <g stroke-width="0">
+  <polygon points="100 11.25 100 13.75 107.5 13.75 107.5 15 110 12.5 107.5 10 107.5 11.25" fill="#404660"/>
+  <rect x="193.75" y="6.25" width="12.5" height="12.5" fill="#e7e8eb"/>
+  <circle cx="200" cy="12.5" r="5" fill="#fbdd71"/>
+  <path d="M204.37,12.5h-1.31c-.48,0-.87.39-.87.88v2.91c-.64.38-1.39.59-2.19.59-1.1,0-2.11-.41-2.88-1.09h3.1c.48,0,.88-.39.88-.87v-1.53c0-.48-.39-.88-.88-.88h-4.59c0-.38.04-.74.15-1.09h2.26c.48,0,.88-.39.88-.88v-.44c0-.48-.39-.88-.88-.88h-.91c.77-.68,1.78-1.09,2.88-1.09.8,0,1.55.22,2.19.6v.5h-1.31c-.48,0-.88.39-.88.88v.44c0,.48.39.88.88.88h3.36c.1.35.14.72.14,1.09Z" fill="#fdebaa"/>
+ </g>
+ <g fill="#a4a7b3" stroke-width="0">
+  <path d="M196.25,5h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path d="M203.75,5h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path transform="translate(407.5 38.75) rotate(180)" d="M203.75,18.75h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+  <path transform="translate(392.5 38.75) rotate(180)" d="M196.25,18.75h0c.69,0,1.25.56,1.25,1.25h-2.5c0-.69.56-1.25,1.25-1.25Z"/>
+ </g>
+ <path d="M193.36,3.75h11.64c.23,0,.45.11.61.29l1.64,1.91c.16.19.25.44.25.71v13.59c0,.55-.38,1-.86,1h-13.29c-.47,0-.86-.45-.86-1V4.75c0-.55.38-1,.86-1Z" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <g fill="#404660">
+  <g font-family="Nunito-Bold, Nunito" font-size="4" font-weight="700" letter-spacing="-.05em">
+   <text transform="translate(170 6.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">GND</tspan></text>
+   <text transform="translate(170 13.75)" font-variation-settings="'wght' 700"><tspan x="0" y="0">DIN</tspan></text>
+   <text transform="translate(170 21.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">+5V</tspan></text>
+   <text transform="translate(221.42 6.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">GND</tspan></text>
+   <text transform="translate(218.98 13.75)" font-variation-settings="'wght' 700"><tspan x="0" y="0">DOUT</tspan></text>
+   <text transform="translate(222.75 21.25)" font-variation-settings="'wght' 700"><tspan x="0" y="0">+5V</tspan></text>
+  </g>
+  <rect transform="translate(199.37 224.37) rotate(-90)" x="209.37" y="10.63" width="5" height="3.75" stroke-width="0"/>
+ </g>
+ <rect transform="translate(195.62 228.12) rotate(-90)" x="210.62" y="14.38" width="2.5" height="3.75" fill="#a4a7b3" stroke-width="0"/>
+ <rect transform="translate(203.12 220.62) rotate(-90)" x="210.62" y="6.88" width="2.5" height="3.75" fill="#a4a7b3" stroke-width="0"/>
+ <path d="M208.75,8.75v-1.5c0-.55.37-1,.83-1h.21s4.17,0,4.17,0h.21c.46,0,.83.45.83,1v1.5" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <path d="M208.75,16.25v1.5c0,.55.37,1,.83,1h.21s4.17,0,4.17,0h.21c.46,0,.83-.45.83-1v-1.5" fill="none" stroke="#404660" stroke-miterlimit="10" stroke-width=".5"/>
+ <g stroke-width="0">
+  <polygon points="180 11.25 180 13.75 187.5 13.75 187.5 15 190 12.5 187.5 10 187.5 11.25" fill="#404660"/>
+  <rect x="80.62" y="2.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="85" cy="5" r="1.25" fill="#d99d5b"/>
+  <rect x="80.63" y="10" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="85" cy="12.5" r="1.25" fill="#d99d5b"/>
+  <rect x="80.62" y="17.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="85" cy="20" r="1.25" fill="#d99d5b"/>
+  <rect x="150.62" y="2.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="155" cy="5" r="1.25" fill="#d99d5b"/>
+  <rect x="150.63" y="10" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="155" cy="12.5" r="1.25" fill="#d99d5b"/>
+  <rect x="150.62" y="17.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="155" cy="20" r="1.25" fill="#d99d5b"/>
+  <rect x="160.62" y="2.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="165" cy="5" r="1.25" fill="#d99d5b"/>
+  <rect x="160.63" y="10" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="165" cy="12.5" r="1.25" fill="#d99d5b"/>
+  <rect x="160.62" y="17.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="165" cy="20" r="1.25" fill="#d99d5b"/>
+  <rect x="230.62" y="2.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="235" cy="5" r="1.25" fill="#d99d5b"/>
+  <rect x="230.63" y="10" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="235" cy="12.5" r="1.25" fill="#d99d5b"/>
+  <rect x="230.62" y="17.5" width="8.75" height="5" rx="2.5" ry="2.5" fill="#fab66e"/>
+  <circle cx="235" cy="20" r="1.25" fill="#d99d5b"/>
+ </g>
+ <g fill="none" stroke="#404660" stroke-linecap="round" stroke-miterlimit="10" stroke-width=".5">
+  <line x1="80" x2="80" y1="1.25" y2="3.75"/>
+  <line x1="80" x2="80" y1="9.58" y2="18.33" stroke-dasharray="0 0 5.83 5.83"/>
+  <line x1="80" x2="80" y1="21.25" y2="23.75"/>
+  <line x1="160" x2="160" y1="1.25" y2="3.75"/>
+  <line x1="160" x2="160" y1="9.58" y2="18.33" stroke-dasharray="0 0 5.83 5.83"/>
+  <line x1="160" x2="160" y1="21.25" y2="23.75"/>
+ </g>
+ <g fill="#d99d5b">
+  <circle class="connection_point" cx="5" cy="5" r="1.25" data-pin-name="pin1"/>
+  <circle class="connection_point" cx="5" cy="12.5" r="1.25" data-pin-name="pin2"/>
+  <circle class="connection_point" cx="5" cy="20" r="1.25" data-pin-name="pin3"/>
+  <circle class="connection_point" cx="235" cy="5" r="1.25" data-pin-name="pin4"/>
+  <circle class="connection_point" cx="235" cy="12.5" r="1.25" data-pin-name="pin5"/>
+  <circle class="connection_point" cx="235" cy="20" r="1.25" data-pin-name="pin6"/>
+ </g>
+<text class="component-reference component-text moveable-text locked" font-size="4.5px" x="120" y="-5" text-anchor="middle" style="display: none;">U2</text><text class="component-value component-text moveable-text locked" font-size="4.5px" x="120" y="0" text-anchor="middle" style="display: none;"/></g><g data-source-id="0838572cedb2cf50842e8581a7955e19" data-source-name="Pushbutton Switch" data-width="25" data-height="27.5" class="component" id="part_5" transform="translate(2075,2055) scale(1,1) rotate(0,0,0)"><rect class="helper-box" x="2.5" y="1.5" width="20" height="24.5" fill="none"/>
+ <g fill="none" stroke="#a4a7b3" stroke-linecap="round" stroke-width="2">
+  <path d="m20 2.5v2.5" stop-color="#000000" style="font-variation-settings:normal"/>
+  <path d="m20 22.5v2.5" stop-color="#000000" style="font-variation-settings:normal"/>
+  <path d="m5 22.5v2.5" stop-color="#000000" style="font-variation-settings:normal"/>
+  <path d="m5 2.5v2.5" stop-color="#000000" style="font-variation-settings:normal"/>
+ </g>
+ <g transform="translate(0,-2.5)">
+  <rect x="2.5" y="6.25" width="20" height="20" rx="1" ry="1" fill="#7b7d86"/>
+  <circle cx="12.5" cy="16.25" r="5.5" fill="#cc5e4e"/>
+  <path d="m12.5 11.25c2.7614 0 5 2.2386 5 5s-2.2386 5-5 5-5-2.2386-5-5 2.2386-5 5-5m0-1c-3.3084 0-6 2.6916-6 6s2.6916 6 6 6 6-2.6916 6-6-2.6916-6-6-6z" fill="#404660"/>
+  <g fill="#404660">
+   <circle cx="6.25" cy="10" r="1.25"/>
+   <circle cx="6.25" cy="22.5" r="1.25"/>
+   <circle cx="18.75" cy="10" r="1.25"/>
+   <circle cx="18.75" cy="22.5" r="1.25"/>
+  </g>
+ </g>
+ <g fill="#a4a7b3">
+  <circle class="connection_point" cx="5" cy="2.5" r="1" data-pin-name="pin1"/>
+  <circle class="connection_point" cx="20" cy="2.5" r="1" data-pin-name="pin2"/>
+  <circle class="connection_point" cx="20" cy="25" r="1" data-pin-name="pin3"/>
+  <circle class="connection_point" cx="5" cy="25" r="1" data-pin-name="pin4"/>
+ </g>
+<text class="component-reference component-text moveable-text locked" font-size="4.5px" x="20" y="-5" style="display: none;">SW1</text><text class="component-value component-text moveable-text locked" font-size="4.5px" x="20" y="0" style="display: none;"/></g><g data-source-id="6e558a2b04d6e406c3f240876ec85290" data-source-name="Light-Emitting Diode RGB" data-width="27.5" data-height="47.5" class="component" id="part_16" transform="translate(2075,2090) scale(1,1) rotate(0,0,0)"><rect class="helper-box" x="1.5" y="0" width="24.5" height="46" fill="none"/>
+  <g fill="none" stroke="#7b7d86" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path class="draggable1" d="m6.25 20v5l-3.75 2.5 0.01466 17.5"/>
+    <path class="draggable2" d="m11.25 20v5l-1.25 2.5v17.5"/>
+    <path class="draggable3" d="m16.25 20v5l1.25 2.5v17.5"/>
+    <path class="draggable4" d="m21.25 20v5l3.75 2.5-0.01466 17.5"/>
+  </g>
+  <path d="m23.75 19v2.25h-20v-2.25c0-0.82787 0.67213-1.5 1.5-1.5h17c0.82787 0 1.5 0.67213 1.5 1.5z" fill="#e7e8eb"/>
+  <path d="m21.25 7.5v10h-15v-10c0-4.1394 3.3606-7.5 7.5-7.5s7.5 3.3606 7.5 7.5z" fill="#e7e8eb"/>
+  <polygon transform="translate(0,-2.5)" points="18.75 15 8.75 15 8.75 10 10 10 11.25 11.25 13.75 11.25 15 10 18.75 10" fill="#a4a7b3"/>
+  <line x1="18.75" x2="18.75" y1="15" y2="7.5" fill="none" stroke="#a4a7b3" stroke-miterlimit="10" stroke-width=".75"/>
+  <line x1="8.75" x2="8.75" y1="15" y2="7.5" fill="none" stroke="#a4a7b3" stroke-miterlimit="10" stroke-width=".75"/>
+  <g fill="#7b7d86">
+    <circle class="connection_point draggable" data-draggable-path="draggable1" cx="2.5" cy="45" r="1" data-pin-name="pin1"/>
+    <circle class="connection_point draggable" data-draggable-path="draggable2" cx="10" cy="45" r="1" data-pin-name="pin2"/>
+    <circle class="connection_point draggable" data-draggable-path="draggable3" cx="17.5" cy="45" r="1" data-pin-name="pin3"/>
+    <circle class="connection_point draggable" data-draggable-path="draggable4" cx="25" cy="45" r="1" data-pin-name="pin4"/>
+  </g>
+<text class="component-reference component-text moveable-text locked" font-size="4.5px" x="27.5" y="22.75" style="display: none;">D1</text><text class="component-value component-text moveable-text locked" font-size="4.5px" x="27.5" y="27.75" style="display: none;"/></g><g class="wireGroup wire-color-red" id="wireGroup_48" transform="translate(2260, 2062.5) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 H15" id="wireGroup_48-1"/><path class="wire" d="M15,0 c0,0 2.5,0 2.5,-2.5" id="wireGroup_48-2"/><path class="wire" d="M17.5,-2.5 V-72.5" id="wireGroup_48-3"/><path class="wire" d="M17.5,-72.5 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_48-4"/><path class="wire" d="M20,-75 H75" id="wireGroup_48-5"/><path class="wire" d="M75,-75 c0,0 2.5,0 2.5,2.5" id="wireGroup_48-6"/><path class="wire" d="M77.5,-72.5 L77.5,-57.5" id="wireGroup_48-7"/></g><g class="wireGroup wire-color-black" id="wireGroup_50" transform="translate(2260, 2070) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 H20" id="wireGroup_50-1"/><path class="wire" d="M20,0 c0,0 2.5,0 2.5,-2.5" id="wireGroup_50-2"/><path class="wire" d="M22.5,-2.5 V-105" id="wireGroup_50-3"/><path class="wire" d="M22.5,-105 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_50-4"/><path class="wire" d="M25,-107.5 H90" id="wireGroup_50-5"/><path class="wire" d="M90,-107.5 c0,0 2.5,0 2.5,2.5" id="wireGroup_50-6"/><path class="wire" d="M92.5,-105 L92.5,-65" id="wireGroup_50-7"/></g><g class="wireGroup wire-color-red" id="wireGroup_1" transform="translate(2077.5,2135) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 H-37.5" id="wireGroup_1-1"/><path class="wire" d="M-37.5,0 c0,0 -2.5,0 -2.5,-2.5" id="wireGroup_1-2"/><path class="wire" d="M-40,-2.5 V-142.5" id="wireGroup_1-3"/><path class="wire" d="M-40,-142.5 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_1-4"/><path class="wire" d="M-37.5,-145 H197.5" id="wireGroup_1-5"/><path class="wire" d="M197.5,-145 c0,0 2.5,0 2.5,2.5" id="wireGroup_1-6"/><path class="wire" d="M200,-142.5 L200,-75" id="wireGroup_1-7"/></g><g class="wireGroup wire-color-orange" id="wireGroup_2" transform="translate(2085, 2135) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 V32.5" id="wireGroup_2-1"/><path class="wire" d="M0,32.5 c0,0 0,2.5 2.5,2.5" id="wireGroup_2-2"/><path class="wire" d="M2.5,35 H67.5" id="wireGroup_2-3"/><path class="wire" d="M67.5,35 c0,0 2.5,0 2.5,-2.5" id="wireGroup_2-4"/><path class="wire" d="M70,32.5 V-70" id="wireGroup_2-5"/><path class="wire" d="M70,-70 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_2-6"/><path class="wire" d="M72.5,-72.5 L130,-72.5" id="wireGroup_2-7"/></g><g class="wireGroup wire-color-green" id="wireGroup_3" transform="translate(2092.5, 2135) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 V27.5" id="wireGroup_3-1"/><path class="wire" d="M0,27.5 c0,0 0,2.5 2.5,2.5" id="wireGroup_3-2"/><path class="wire" d="M2.5,30 H70" id="wireGroup_3-3"/><path class="wire" d="M70,30 c0,0 2.5,0 2.5,-2.5" id="wireGroup_3-4"/><path class="wire" d="M72.5,27.5 V-62.5" id="wireGroup_3-5"/><path class="wire" d="M72.5,-62.5 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_3-6"/><path class="wire" d="M75,-65 L122.5,-65" id="wireGroup_3-7"/></g><g class="wireGroup wire-color-blue" id="wireGroup_4" transform="translate(2100, 2135) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 V22.5" id="wireGroup_4-1"/><path class="wire" d="M0,22.5 c0,0 0,2.5 2.5,2.5" id="wireGroup_4-2"/><path class="wire" d="M2.5,25 H72.5" id="wireGroup_4-3"/><path class="wire" d="M72.5,25 c0,0 2.5,0 2.5,-2.5" id="wireGroup_4-4"/><path class="wire" d="M75,22.5 V-55" id="wireGroup_4-5"/><path class="wire" d="M75,-55 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_4-6"/><path class="wire" d="M77.5,-57.5 L115,-57.5" id="wireGroup_4-7"/></g><g class="wireGroup wire-color-yellow" id="wireGroup_6" transform="translate(2095, 2080) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 V2.5" id="wireGroup_6-1"/><path class="wire" d="M0,2.5 c0,0 0,2.5 2.5,2.5" id="wireGroup_6-2"/><path class="wire" d="M2.5,5 L120,5" id="wireGroup_6-3"/></g><g class="wireGroup wire-color-black" id="wireGroup_7" transform="translate(2095, 2057.5) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 V-45" id="wireGroup_7-1"/><path class="wire" d="M0,-45 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_7-2"/><path class="wire" d="M2.5,-47.5 L187.5,-47.5" id="wireGroup_7-3"/></g><g class="wireGroup wire-color-purple" id="wireGroup_8" transform="translate(2260, 2100) scale(1,1) rotate(0,0,0)"><path class="wire" d="M0,0 H27.5" id="wireGroup_8-1"/><path class="wire" d="M27.5,0 c0,0 2.5,0 2.5,-2.5" id="wireGroup_8-2"/><path class="wire" d="M30,-2.5 V-122.5" id="wireGroup_8-3"/><path class="wire" d="M30,-122.5 c0,0 0,-2.5 2.5,-2.5" id="wireGroup_8-4"/><path class="wire" d="M32.5,-125 H82.5" id="wireGroup_8-5"/><path class="wire" d="M82.5,-125 c0,0 2.5,0 2.5,2.5" id="wireGroup_8-6"/><path class="wire" d="M85,-122.5 L85,-95" id="wireGroup_8-7"/></g></g><g transform="translate(105, 322.5)" opacity="0.35">
+ <g transform="translate(-2.5 -2.5)">
+  <g transform="matrix(.5 0 0 .5 68.316 2.5)">
+   <path d="m-125.48 22q-0.38133 0-0.58933-0.19067-0.19067-0.208-0.19067-0.58933v-10.66q0-0.38133 0.19067-0.572 0.208-0.208 0.58933-0.208h3.3453q2.964 0 4.576 1.56 1.612 1.56 1.612 4.5413 0 1.4907-0.41599 2.6347-0.39867 1.1267-1.196 1.9067-0.79733 0.78-1.9413 1.1787t-2.6347 0.39867zm0.64133-1.2133h2.6q1.2133 0 2.0973-0.312 0.90133-0.312 1.4907-0.91866 0.60667-0.60667 0.90133-1.5253 0.29467-0.936 0.29467-2.1493 0-2.444-1.196-3.6573-1.196-1.2307-3.588-1.2307h-2.6zm15.045 1.3693q-1.3347 0-2.3053-0.52-0.95333-0.53733-1.4907-1.508-0.52-0.97066-0.52-2.3227 0-1.3173 0.52-2.288 0.52-0.988 1.4213-1.5427 0.91867-0.55466 2.1147-0.55466 0.84933 0 1.5253 0.29467 0.676 0.27733 1.144 0.81466 0.48534 0.53733 0.728 1.3 0.26 0.76267 0.26 1.716 0 0.27733-0.156 0.416-0.156 0.12133-0.45066 0.12133h-6.032v-0.91866h5.7026l-0.27733 0.22533q0-0.936-0.27733-1.5773-0.27733-0.65866-0.81467-1.0053-0.51999-0.34667-1.3173-0.34667-0.88399 0-1.508 0.416-0.60667 0.39867-0.91867 1.1267-0.312 0.71067-0.312 1.664v0.104q0 1.5947 0.76267 2.4267 0.78 0.832 2.2013 0.832 0.58933 0 1.1613-0.156 0.58933-0.156 1.144-0.52 0.24266-0.156 0.43333-0.13867 0.208 0 0.32933 0.12133 0.12133 0.104 0.156 0.27733 0.052 0.156-0.0347 0.34667-0.0693 0.19067-0.29466 0.32933-0.572 0.416-1.352 0.64133t-1.5427 0.22533zm8.268 0q-0.78 0-1.5773-0.19067-0.78-0.19067-1.456-0.65866-0.17334-0.12133-0.24267-0.27733-0.0693-0.17333-0.052-0.32933 0.0347-0.17333 0.13867-0.29467 0.12133-0.12133 0.27733-0.13867 0.17333-0.03467 0.38133 0.06933 0.676 0.416 1.3 0.58933 0.64133 0.156 1.2653 0.156 0.988 0 1.4907-0.364 0.50267-0.364 0.50267-0.988 0-0.48533-0.32933-0.76266-0.32934-0.29467-1.04-0.45067l-1.5773-0.34667q-1.092-0.22533-1.6293-0.78-0.52-0.55466-0.52-1.4387 0-0.78 0.39866-1.3347 0.416-0.572 1.1613-0.884 0.74533-0.312 1.7333-0.312 0.76266 0 1.4387 0.208 0.69333 0.19067 1.248 0.624 0.17333 0.12133 0.22533 0.29467 0.06933 0.156 0.01733 0.32933-0.03467 0.156-0.156 0.27733-0.12133 0.104-0.29467 0.12133-0.17333 0.01733-0.364-0.104-0.52-0.34667-1.0573-0.50267-0.53734-0.17333-1.0573-0.17333-0.97067 0-1.4733 0.38133-0.50266 0.38133-0.50266 1.0053 0 0.48533 0.312 0.79733t0.97066 0.45067l1.5773 0.32933q1.1267 0.24267 1.6813 0.78 0.572 0.52 0.572 1.4213 0 1.144-0.91866 1.82-0.91867 0.676-2.444 0.676zm6.188-0.06933q-0.34667 0-0.52-0.19067-0.17333-0.208-0.17333-0.572v-7.0893q0-0.364 0.17333-0.55467t0.52-0.19067q0.32933 0 0.52 0.19067t0.19067 0.55467v7.0893q0 0.364-0.19067 0.572-0.17333 0.19067-0.52 0.19067zm0-10.539q-0.43333 0-0.676-0.22533-0.24267-0.24267-0.24267-0.64133 0-0.416 0.24267-0.624 0.24267-0.22533 0.676-0.22533 0.45067 0 0.676 0.22533 0.24267 0.208 0.24267 0.624 0 0.39867-0.24267 0.64133-0.22533 0.22533-0.676 0.22533zm7.0547 13.728q-0.91866 0-1.8027-0.22533-0.86666-0.208-1.5773-0.676-0.208-0.12133-0.27733-0.29467-0.052-0.17333-0.01733-0.34667 0.03467-0.156 0.156-0.29467 0.12133-0.12133 0.27733-0.156 0.17333-0.03467 0.34667 0.052 0.76266 0.468 1.456 0.64133t1.3693 0.17333q1.2307 0 1.8547-0.65866 0.64133-0.65867 0.64133-1.9067v-1.9587h0.17333q-0.26 1.0053-1.1093 1.5947-0.832 0.58933-1.9587 0.58933-1.1613 0-2.0107-0.52-0.84933-0.53733-1.3173-1.4907-0.45067-0.95333-0.45067-2.2013 0-0.936 0.26-1.6987 0.26-0.78 0.74533-1.3173 0.50267-0.55467 1.196-0.84933 0.71066-0.312 1.5773-0.312 1.144 0 1.976 0.58933 0.832 0.572 1.0747 1.56l-0.17333 0.208v-1.612q0-0.34667 0.17333-0.52 0.19067-0.19067 0.52-0.19067 0.34667 0 0.52 0.19067 0.17333 0.17333 0.17333 0.52v7.228q0 1.924-0.97066 2.8947-0.95333 0.988-2.8253 0.988zm-0.208-4.6107q0.81466 0 1.404-0.364 0.58933-0.38133 0.90133-1.0747 0.32933-0.69333 0.32933-1.6293 0-1.404-0.71066-2.2187-0.71066-0.832-1.924-0.832-0.79733 0-1.3867 0.38133-0.58933 0.364-0.91866 1.0573-0.312 0.676-0.312 1.612 0 1.404 0.71067 2.236 0.71066 0.832 1.9067 0.832zm7.332 1.456q-0.34667 0-0.52-0.19067t-0.17333-0.53733v-7.228q0-0.34667 0.17333-0.52 0.17333-0.19067 0.50266-0.19067 0.32933 0 0.50267 0.19067 0.19067 0.17333 0.19067 0.52v1.4907l-0.19067-0.208q0.364-1.0053 1.1787-1.508 0.832-0.52 1.9067-0.52 1.0053 0 1.664 0.364 0.676 0.364 1.0053 1.1093 0.32933 0.728 0.32933 1.8547v4.6453q0 0.34667-0.19067 0.53733-0.17333 0.19067-0.50267 0.19067-0.34667 0-0.53733-0.19067-0.17333-0.19067-0.17333-0.53733v-4.5587q0-1.1787-0.468-1.716-0.45067-0.55467-1.456-0.55467-1.1613 0-1.8547 0.728-0.676 0.71066-0.676 1.9067v4.1947q0 0.728-0.71066 0.728zm12.948 0.03467q-1.3347 0-2.3053-0.52-0.95333-0.53733-1.4907-1.508-0.52-0.97066-0.52-2.3227 0-1.3173 0.52-2.288 0.52-0.988 1.4213-1.5427 0.91866-0.55466 2.1147-0.55466 0.84933 0 1.5253 0.29467 0.676 0.27733 1.144 0.81466 0.48533 0.53733 0.728 1.3 0.26 0.76267 0.26 1.716 0 0.27733-0.156 0.416-0.156 0.12133-0.45067 0.12133h-6.032v-0.91866h5.7027l-0.27733 0.22533q0-0.936-0.27733-1.5773-0.27733-0.65866-0.81466-1.0053-0.52-0.34667-1.3173-0.34667-0.884 0-1.508 0.416-0.60667 0.39867-0.91866 1.1267-0.312 0.71067-0.312 1.664v0.104q0 1.5947 0.76266 2.4267 0.78 0.832 2.2013 0.832 0.58933 0 1.1613-0.156 0.58933-0.156 1.144-0.52 0.24267-0.156 0.43333-0.13867 0.208 0 0.32933 0.12133 0.12133 0.104 0.156 0.27733 0.052 0.156-0.03467 0.34667-0.06933 0.19067-0.29467 0.32933-0.572 0.416-1.352 0.64133-0.78 0.22533-1.5427 0.22533zm8.632 0q-1.1267 0-1.976-0.53733-0.832-0.53733-1.3-1.508-0.45067-0.988-0.45067-2.3227 0-1.352 0.45067-2.3227 0.468-0.988 1.3-1.508 0.84933-0.53733 1.976-0.53733 1.144 0 1.9587 0.572 0.81466 0.572 1.092 1.5427h-0.19067v-5.1653q0-0.34667 0.17333-0.52 0.19067-0.19067 0.53733-0.19067 0.32933 0 0.50267 0.19067 0.19067 0.17333 0.19067 0.52v11.024q0 0.34667-0.17333 0.53733t-0.52 0.19067q-0.32933 0-0.52-0.19067-0.17333-0.19067-0.17333-0.53733v-1.6467l0.19067 0.24267q-0.27733 0.988-1.1093 1.5773-0.81466 0.58933-1.9587 0.58933zm0.29467-1.1267q0.78 0 1.3693-0.38133 0.58933-0.38133 0.90133-1.1093 0.32933-0.728 0.32933-1.7507 0-1.5773-0.71066-2.4093-0.69333-0.832-1.8893-0.832-0.79733 0-1.3867 0.38133-0.572 0.364-0.90133 1.092-0.312 0.71066-0.312 1.768 0 1.56 0.71067 2.4093 0.71066 0.832 1.8893 0.832zm15.184 1.092q-0.312 0-0.50267-0.156-0.19067-0.17333-0.312-0.50266l-3.8307-10.937q-0.12133-0.364 0.052-0.60667 0.19067-0.26 0.58933-0.26 0.29467 0 0.468 0.156 0.17333 0.13867 0.29467 0.45067l3.588 10.521h-0.60666l3.6573-10.469q0.12133-0.32933 0.29467-0.48533 0.17333-0.17333 0.468-0.17333 0.27733 0 0.43333 0.17333 0.17333 0.156 0.29467 0.48533l3.6053 10.469h-0.53733l3.6227-10.521q0.08667-0.29467 0.26-0.45067 0.19067-0.156 0.48533-0.156 0.364 0 0.53733 0.24267 0.17333 0.24267 0.03467 0.624l-3.848 10.937q-0.12133 0.32933-0.312 0.50266-0.17333 0.156-0.50267 0.156-0.312 0-0.50266-0.156-0.17333-0.17333-0.312-0.50266l-3.484-10.036h0.38133l-3.5187 10.036q-0.12133 0.32933-0.29467 0.50266-0.17333 0.156-0.50267 0.156zm16.077-0.03467q-0.34667 0-0.52-0.19067-0.17333-0.208-0.17333-0.572v-7.0893q0-0.364 0.17333-0.55467t0.52-0.19067q0.32933 0 0.52 0.19067t0.19067 0.55467v7.0893q0 0.364-0.19067 0.572-0.17333 0.19067-0.52 0.19067zm0-10.539q-0.43333 0-0.676-0.22533-0.24267-0.24267-0.24267-0.64133 0-0.416 0.24267-0.624 0.24267-0.22533 0.676-0.22533 0.45067 0 0.676 0.22533 0.24267 0.208 0.24267 0.624 0 0.39867-0.24267 0.64133-0.22533 0.22533-0.676 0.22533zm6.708 10.608q-0.988 0-1.664-0.34667-0.65866-0.364-0.988-1.04-0.32933-0.69333-0.32933-1.6813v-4.42h-1.1613q-0.29467 0-0.45067-0.13867-0.156-0.156-0.156-0.416 0-0.26 0.156-0.39867 0.156-0.13867 0.45067-0.13867h1.1613v-1.9933q0-0.34667 0.19067-0.52 0.19067-0.19067 0.52-0.19067t0.50267 0.19067q0.19067 0.17333 0.19067 0.52v1.9933h2.184q0.29467 0 0.45066 0.13867 0.156 0.13867 0.156 0.39867 0 0.26-0.156 0.416-0.156 0.13867-0.45066 0.13867h-2.184v4.2813q0 0.988 0.416 1.508 0.416 0.50267 1.352 0.50267 0.32933 0 0.55467-0.06933 0.24267-0.06933 0.39867-0.06933 0.156-0.01733 0.26 0.104 0.104 0.12133 0.104 0.416 0 0.208-0.08667 0.38133-0.06933 0.17333-0.26 0.24267-0.208 0.06933-0.55466 0.12133-0.32933 0.06933-0.60667 0.06933zm3.4859-0.03467q-0.34667 0-0.52-0.19067t-0.17333-0.53733v-11.024q0-0.34667 0.17333-0.52 0.17333-0.19067 0.52-0.19067 0.32933 0 0.52 0.19067 0.19067 0.17333 0.19067 0.52v5.0787h-0.22533q0.364-1.0053 1.1787-1.508 0.832-0.52 1.9067-0.52 1.0053 0 1.664 0.364 0.676 0.364 1.0053 1.1093 0.32933 0.728 0.32933 1.8547v4.6453q0 0.34667-0.19067 0.53733-0.17333 0.19067-0.50267 0.19067-0.34667 0-0.53733-0.19067-0.17333-0.19067-0.17333-0.53733v-4.5587q0-1.1787-0.468-1.716-0.45067-0.55467-1.456-0.55467-1.1613 0-1.8547 0.728-0.676 0.71066-0.676 1.9067v4.1947q0 0.728-0.71066 0.728z" fill="#2d3142" aria-label="Designed With"/>
+   <path d="m16 3.2c-7.0692 0-12.8 5.7308-12.8 12.8 0 7.0692 5.7308 12.8 12.8 12.8 0.8837 0 1.6 0.7163 1.6 1.6 0 0.8836-0.7163 1.6-1.6 1.6-8.8366 0-16-7.1635-16-16 0-8.8366 7.1634-16 16-16 0.8837 0 1.6 0.71634 1.6 1.6 0 0.88366-0.7163 1.6-1.6 1.6z" clip-rule="evenodd" fill="#f7a541" fill-rule="evenodd"/>
+   <path d="m19.121 31.696c-1.0106 0.1999-2.0543 0.3045-3.1208 0.3045-0.8837 0-1.6-0.7163-1.6-1.6s0.7163-1.6 1.6-1.6c0.8569 0 1.6926-0.084 2.4998-0.2437 0.8669-0.1715 1.7086 0.3922 1.8801 1.2591s-0.3922 1.7086-1.2591 1.8801zm3.5505-2.8308c-0.4916-0.7343-0.2948-1.7281 0.4395-2.2197 1.3965-0.935 2.5992-2.1377 3.5342-3.5342 0.4916-0.7343 1.4854-0.9311 2.2197-0.4395 0.7342 0.4916 0.931 1.4854 0.4394 2.2197-1.1677 1.7441-2.669 3.2454-4.4131 4.4131-0.7343 0.4916-1.7281 0.2948-2.2197-0.4394zm7.1441-8.4848c-0.8669-0.1715-1.4306-1.0132-1.2591-1.8801 0.1597-0.8072 0.2437-1.6429 0.2437-2.4998s-0.084-1.6926-0.2437-2.4998c-0.1715-0.8669 0.3922-1.7086 1.2591-1.8801s1.7086 0.3922 1.8801 1.2591c0.1999 1.0106 0.3045 2.0543 0.3045 3.1208s-0.1046 2.1102-0.3045 3.1208c-0.1715 0.8669-1.0132 1.4306-1.8801 1.2591zm-0.9507-11.051c-0.7343 0.4916-1.7281 0.29485-2.2197-0.43944-0.935-1.3966-2.1377-2.5993-3.5342-3.5342-0.7343-0.49159-0.9311-1.4854-0.4395-2.2196 0.4916-0.7343 1.4854-0.93104 2.2197-0.43944 1.7441 1.1677 3.2454 2.669 4.4131 4.4131 0.4916 0.73429 0.2948 1.7281-0.4394 2.2197zm-8.4848-7.1441c-0.1715 0.86685-1.0132 1.4306-1.8801 1.2591-0.8072-0.1597-1.6429-0.24367-2.4998-0.24367-0.8836 0-1.6-0.71635-1.6-1.6 0-0.88366 0.7164-1.6 1.6-1.6 1.0665 9.324e-8 2.1102 0.10457 3.1208 0.30451 0.8669 0.17149 1.4306 1.0132 1.2591 1.8801z" clip-rule="evenodd" fill="#f7a541" fill-rule="evenodd"/>
+   <path d="m16.361 10.4c-3.3665 0-5.9606 2.5799-5.9606 5.5999 0 3.0201 2.5941 5.6 5.9606 5.6 1.6932 0 3.207-0.6609 4.2845-1.7076 0.6339-0.6157 1.6468-0.601 2.2625 0.0328 0.6158 0.6338 0.6011 1.6468-0.0327 2.2625-1.6669 1.6192-3.9775 2.6123-6.5143 2.6123-4.9847 0-9.1606-3.8671-9.1606-8.8 0-4.9328 4.1759-8.8 9.1606-8.8 2.5368 0 4.8474 0.99313 6.5143 2.6124 0.6338 0.6157 0.6485 1.6287 0.0327 2.2625-0.6157 0.6338-1.6286 0.6485-2.2625 0.0328-1.0775-1.0467-2.5913-1.7076-4.2845-1.7076z" clip-rule="evenodd" fill="#f7a541" fill-rule="evenodd"/>
+   <path d="m49.551 23c-3.6394 0-6.5509-2.7762-6.5509-6.8414 0-4.0651 2.9115-6.8413 6.5509-6.8413 1.9921 0 3.4096 0.77342 4.4439 1.9433 0.1533 0.1587 0.2299 0.3966 0.2299 0.6346 0 0.5156-0.4023 0.932-0.9003 0.932-0.2873 0-0.5363-0.119-0.6896-0.3173-0.747-0.8725-1.8388-1.4277-3.0839-1.4277-2.5859 0-4.578 2.1019-4.578 5.0764 0 2.9547 1.9921 5.0765 4.578 5.0765 1.2451 0 2.3369-0.5552 3.1031-1.4277 0.1532-0.1983 0.3831-0.3173 0.6704-0.3173 0.498 0 0.9003 0.4164 0.9003 0.932 0 0.238-0.0766 0.4759-0.2299 0.6346-1.0535 1.1699-2.4518 1.9433-4.4439 1.9433z" fill="#2d3142"/>
+   <path d="m57.192 11.28c-0.5938 0-1.111-0.5156-1.111-1.1502 0-0.63455 0.5172-1.1303 1.111-1.1303 0.613 0 1.111 0.49575 1.111 1.1303 0 0.6346-0.498 1.1502-1.111 1.1502zm0 11.581c-0.4597 0-0.8428-0.3966-0.8428-0.8924v-7.9915c0-0.4957 0.3831-0.8923 0.862-0.8923 0.4597 0 0.8619 0.3966 0.8619 0.8923v7.9915c0 0.4958-0.4022 0.8924-0.8811 0.8924z" fill="#2d3142"/>
+   <path d="m64.957 13.026c0.4981 0 0.7279 0.3966 0.7279 0.8527 0 0.4164-0.3065 0.7734-0.9003 0.8527-0.7662 0.0793-1.8388 0.6544-2.2411 1.3682v5.8697c0 0.4958-0.4022 0.8924-0.8619 0.8924-0.4789 0-0.862-0.3966-0.862-0.8924v-7.9915c0-0.4957 0.3831-0.8923 0.8428-0.8923 0.4789 0 0.8811 0.3966 0.8811 0.8923v0.6743c0.5172-0.7139 1.2451-1.3088 1.9155-1.527 0.2107-0.0594 0.3448-0.0991 0.498-0.0991z" fill="#2d3142"/>
+   <path d="m66.717 17.963c0-2.8754 1.9154-5.017 4.712-5.017 1.3217 0 2.2411 0.4362 2.9499 1.1105 0.1532 0.1388 0.2681 0.3767 0.2681 0.5949 0 0.456-0.3447 0.813-0.7662 0.813-0.2107 0-0.383-0.0793-0.5171-0.1983-0.5364-0.5156-1.1302-0.7337-1.858-0.7337-1.8197 0-2.9882 1.4476-2.9882 3.4306s1.1685 3.4504 2.9882 3.4504c0.7278 0 1.3216-0.2181 1.858-0.7337 0.1149-0.119 0.3064-0.1983 0.498-0.1983 0.4405 0 0.7853 0.3569 0.7853 0.7932 0 0.2379-0.1149 0.4759-0.2681 0.6147-0.7088 0.6742-1.6282 1.1105-2.9499 1.1105-2.7966 0-4.712-2.1615-4.712-5.0368z" fill="#2d3142"/>
+   <path d="m83.882 13.085c0.4789 0 0.8811 0.3966 0.8811 0.8923v7.9915c0 0.4958-0.4022 0.8924-0.8619 0.8924-0.4789 0-0.862-0.3966-0.862-0.8924v-0.5155c-0.6896 0.7932-1.858 1.5467-3.2946 1.5467-1.9729 0-2.9498-1.0312-2.9498-3.0538v-5.9689c0-0.4957 0.3831-0.8923 0.8619-0.8923 0.4597 0 0.862 0.3966 0.862 0.8923v5.374c0 1.5864 0.7662 2.0623 1.9538 2.0623 1.0726 0 2.0495-0.6346 2.5667-1.3484v-6.0879c0-0.4957 0.3831-0.8923 0.8428-0.8923z" fill="#2d3142"/>
+   <path d="m88.337 11.28c-0.5938 0-1.111-0.5156-1.111-1.1502 0-0.63455 0.5172-1.1303 1.111-1.1303 0.6129 0 1.111 0.49575 1.111 1.1303 0 0.6346-0.4981 1.1502-1.111 1.1502zm0 11.581c-0.4597 0-0.8428-0.3966-0.8428-0.8924v-7.9915c0-0.4957 0.3831-0.8923 0.8619-0.8923 0.4598 0 0.862 0.3966 0.862 0.8923v7.9915c0 0.4958-0.4022 0.8924-0.8811 0.8924z" fill="#2d3142"/>
+   <path d="m95.547 21.295c0.4406 0 0.7279 0.3173 0.7279 0.7536 0 0.3371-0.1724 0.575-0.4406 0.6742-0.3256 0.1586-0.7662 0.2776-1.3217 0.2776-1.4557 0-2.2027-0.8527-2.2027-2.3598v-5.8895h-0.8812c-0.4022 0-0.7661-0.3569-0.7661-0.7932 0-0.4164 0.3639-0.7734 0.7661-0.7734h0.8812v-1.8243c0-0.4958 0.3831-0.8924 0.8619-0.8924 0.4597 0 0.862 0.3966 0.862 0.8924v1.8243h1.2067c0.4214 0 0.7662 0.357 0.7662 0.7734 0 0.4363-0.3448 0.7932-0.7662 0.7932h-1.2067v5.4929c0 0.6742 0.3065 1.17 0.9003 1.17 0.3256 0 0.4405-0.119 0.6129-0.119z" fill="#2d3142"/>
+   <path d="m108.81 23c-3.639 0-6.551-2.7762-6.551-6.8414 0-4.0651 2.912-6.8413 6.551-6.8413 1.992 0 3.409 0.77342 4.444 1.9433 0.153 0.1587 0.23 0.3966 0.23 0.6346 0 0.5156-0.403 0.932-0.901 0.932-0.287 0-0.536-0.119-0.689-0.3173-0.747-0.8725-1.839-1.4277-3.084-1.4277-2.586 0-4.578 2.1019-4.578 5.0764 0 2.9547 1.992 5.0765 4.578 5.0765 1.245 0 2.337-0.5552 3.103-1.4277 0.153-0.1983 0.383-0.3173 0.67-0.3173 0.498 0 0.901 0.4164 0.901 0.932 0 0.238-0.077 0.4759-0.23 0.6346-1.054 1.1699-2.452 1.9433-4.444 1.9433z" fill="#2d3142"/>
+   <path d="m119.32 12.946c2.011 0 3.716 0.9122 3.716 3.3513v5.6713c0 0.4958-0.402 0.8924-0.862 0.8924s-0.862-0.3966-0.862-0.8924v-0.2776c-0.709 0.8527-1.781 1.3088-3.026 1.3088-1.533 0-3.218-1.0708-3.218-3.1728 0-2.1813 1.666-3.1331 3.218-3.1331 1.245 0 2.317 0.4164 3.026 1.2691v-1.5864c0-1.1898-0.939-1.9037-2.26-1.9037-0.843 0-1.571 0.2578-2.28 0.8328-0.115 0.0794-0.268 0.1389-0.421 0.1389-0.383 0-0.69-0.3372-0.69-0.7338 0-0.2379 0.115-0.456 0.288-0.575 0.977-0.8131 2.088-1.1898 3.371-1.1898zm-0.383 8.8045c0.958 0 1.858-0.3768 2.375-1.0906v-1.6261c-0.517-0.7139-1.417-1.0907-2.375-1.0907-1.245 0-2.126 0.7734-2.126 1.9037s0.881 1.9037 2.126 1.9037z" fill="#2d3142"/>
+   <path d="m130.8 12.946c1.954 0 2.969 1.0708 2.969 3.0935v5.9291c0 0.4958-0.402 0.8924-0.881 0.8924-0.46 0-0.843-0.3966-0.843-0.8924v-5.3342c0-1.5864-0.785-2.102-1.973-2.102-1.073 0-2.049 0.6742-2.547 1.3881v6.0481c0 0.4958-0.403 0.8924-0.862 0.8924-0.479 0-0.862-0.3966-0.862-0.8924v-7.9915c0-0.4957 0.383-0.8923 0.842-0.8923 0.479 0 0.882 0.3966 0.882 0.8923v0.5354c0.632-0.7535 1.858-1.5665 3.275-1.5665z" fill="#2d3142"/>
+   <path d="m143.38 13.085c0.479 0 0.862 0.3966 0.862 0.8923 0 0.119-0.038 0.238-0.077 0.357l-3.045 7.6742c-0.211 0.5156-0.69 0.8527-1.226 0.8527-0.575 0-1.054-0.3371-1.245-0.8527l-3.065-7.6941c-0.038-0.0991-0.058-0.2181-0.058-0.3371 0-0.4957 0.364-0.8923 0.843-0.8923 0.345 0 0.69 0.2379 0.805 0.5552l2.701 7.0992 2.7-7.0992c0.115-0.3173 0.441-0.5552 0.805-0.5552z" fill="#2d3142"/>
+   <path d="m149.74 12.946c2.011 0 3.716 0.9122 3.716 3.3513v5.6713c0 0.4958-0.403 0.8924-0.862 0.8924-0.46 0-0.862-0.3966-0.862-0.8924v-0.2776c-0.709 0.8527-1.782 1.3088-3.027 1.3088-1.532 0-3.218-1.0708-3.218-3.1728 0-2.1813 1.667-3.1331 3.218-3.1331 1.245 0 2.318 0.4164 3.027 1.2691v-1.5864c0-1.1898-0.939-1.9037-2.261-1.9037-0.842 0-1.57 0.2578-2.279 0.8328-0.115 0.0794-0.268 0.1389-0.421 0.1389-0.384 0-0.69-0.3372-0.69-0.7338 0-0.2379 0.115-0.456 0.287-0.575 0.977-0.8131 2.088-1.1898 3.372-1.1898zm-0.384 8.8045c0.958 0 1.858-0.3768 2.376-1.0906v-1.6261c-0.518-0.7139-1.418-1.0907-2.376-1.0907-1.245 0-2.126 0.7734-2.126 1.9037s0.881 1.9037 2.126 1.9037z" fill="#2d3142"/>
+   <path d="m155.89 21.929c-0.192-0.1388-0.326-0.3768-0.326-0.6346 0-0.4362 0.326-0.7734 0.747-0.7734 0.153 0 0.306 0.0595 0.421 0.1389 0.709 0.5354 1.629 0.9121 2.605 0.9121 1.303 0 1.993-0.5552 1.993-1.3682 0-0.9519-1.054-1.2692-2.242-1.5468-1.57-0.3767-3.409-0.813-3.409-2.8753 0-1.5269 1.264-2.8357 3.524-2.8357 1.284 0 2.299 0.3966 3.084 0.9915 0.173 0.1388 0.307 0.3371 0.307 0.5949 0 0.3966-0.326 0.7337-0.709 0.7337-0.134 0-0.287-0.0595-0.383-0.1388-0.594-0.4561-1.398-0.7337-2.279-0.7337-1.169 0-1.897 0.4759-1.897 1.2493 0 0.8328 0.996 1.1104 2.146 1.3881 1.609 0.3767 3.524 0.8328 3.524 3.034 0 1.6458-1.303 2.9348-3.735 2.9348-1.284 0-2.433-0.3371-3.371-1.0708z" fill="#2d3142"/>
+  </g>
+ </g>
+</g></svg>
