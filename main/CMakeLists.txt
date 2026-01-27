@@ -1,0 +1,10 @@
+idf_component_register(SRCS "wifi_spectrum_display.c"
+                              "storage.c"
+                              "led_control.c"
+                              "wifi_scanner.c"
+                              "web_ui.c"
+                              "button.c"
+                              "dns_server.c"
+                    INCLUDE_DIRS "."
+                    EMBED_TXTFILES "index.html"
+                    REQUIRES nvs_flash esp_wifi esp_http_server driver led_strip esp_timer lwip json)
