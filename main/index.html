@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WiFi Spectrum Display</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px rgba(0,150,255,0.5);
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+    .mode-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .mode-btn:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .mode-btn.active {
+      background: rgba(0,150,255,0.3);
+      border-color: #0af;
+      box-shadow: 0 0 20px rgba(0,150,255,0.3);
+    }
+    .color-picker-wrap {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .color-picker-wrap label {
+      opacity: 0.8;
+    }
+    input[type="color"] {
+      width: 60px;
+      height: 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: none;
+    }
+    input[type="range"] {
+      flex: 1;
+      height: 8px;
+      border-radius: 4px;
+      -webkit-appearance: none;
+      background: rgba(255,255,255,0.2);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+    }
+    .status {
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.9em;
+      margin-top: 20px;
+    }
+    #colorSection, #colormapSection {
+      display: none;
+    }
+    .preview {
+      height: 30px;
+      border-radius: 8px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    }
+    #solidPreview {
+      background: hsl(0, 100%, 50%);
+    }
+    .cmap-btn {
+      display: inline-block;
+      padding: 10px 12px;
+      margin: 5px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .cmap-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+    .cmap-btn.active {
+      background: rgba(0,150,255,0.3);
+      border-color: #0af;
+    }
+    .cmap-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cmap-preview {
+      height: 6px;
+      border-radius: 3px;
+      margin-top: 5px;
+    }
+    .cmap-jet { background: linear-gradient(90deg, #000080, #00f, #0ff, #ff0, #f00); }
+    .cmap-hsv { background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00); }
+    .cmap-autumn { background: linear-gradient(90deg, #f00, #f80, #ff0); }
+    .cmap-hot { background: linear-gradient(90deg, #000, #f00, #ff0, #fff); }
+    .cmap-cool { background: linear-gradient(90deg, #0ff, #f0f); }
+    .cmap-viridis { background: linear-gradient(90deg, #440154, #3b528b, #21918c, #5ec962, #fde725); }
+    .cmap-plasma { background: linear-gradient(90deg, #0d0887, #7e03a8, #cc4778, #f89540, #f0f921); }
+    .cmap-turbo { background: linear-gradient(90deg, #30123b, #4686e1, #2ddcba, #f9dc2a, #e5500e, #7a0403); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>WiFi Spectrum Display</h1>
+
+    <div class="card">
+      <h2>Scan Mode</h2>
+      <div class="cmap-grid">
+        <button class="mode-btn scan-btn" data-scan="0" onclick="setScan(0)" style="display:inline-block;width:45%">
+          RSSI
+        </button>
+        <button class="mode-btn scan-btn" data-scan="1" onclick="setScan(1)" style="display:inline-block;width:45%">
+          Traffic
+        </button>
+      </div>
+      <div class="status" style="margin-top:10px;font-size:0.85em" id="scanInfo">
+        Scanning access points
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Display Mode</h2>
+      <button class="mode-btn" data-mode="1" onclick="setMode(1)">
+        Colormap (Heat Map)
+      </button>
+      <button class="mode-btn" data-mode="0" onclick="setMode(0)">
+        Solid Color
+      </button>
+      <button class="mode-btn" data-mode="2" onclick="setMode(2)">
+        Rainbow Scroll
+      </button>
+      <button class="mode-btn" data-mode="3" onclick="setMode(3)">
+        Cycling Color
+      </button>
+    </div>
+
+    <div class="card" id="colorSection">
+      <h2>Color Selection</h2>
+      <div class="color-picker-wrap">
+        <label>Hue:</label>
+        <input type="range" id="hueSlider" min="0" max="255" value="0" oninput="setColor()">
+      </div>
+      <div class="color-picker-wrap">
+        <label>Saturation:</label>
+        <input type="range" id="satSlider" min="0" max="255" value="255" oninput="setColor()">
+      </div>
+      <div id="solidPreview" class="preview"></div>
+    </div>
+
+    <div class="card" id="colormapSection">
+      <h2>Colormap</h2>
+      <div class="cmap-grid">
+        <button class="cmap-btn" data-cmap="0" onclick="setCmap(0)">
+          Jet<div class="cmap-preview cmap-jet"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="1" onclick="setCmap(1)">
+          HSV<div class="cmap-preview cmap-hsv"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="2" onclick="setCmap(2)">
+          Autumn<div class="cmap-preview cmap-autumn"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="3" onclick="setCmap(3)">
+          Hot<div class="cmap-preview cmap-hot"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="4" onclick="setCmap(4)">
+          Cool<div class="cmap-preview cmap-cool"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="5" onclick="setCmap(5)">
+          Viridis<div class="cmap-preview cmap-viridis"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="6" onclick="setCmap(6)">
+          Plasma<div class="cmap-preview cmap-plasma"></div>
+        </button>
+        <button class="cmap-btn" data-cmap="7" onclick="setCmap(7)">
+          Turbo<div class="cmap-preview cmap-turbo"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Brightness & Power</h2>
+      <div class="color-picker-wrap">
+        <label>Brightness:</label>
+        <input type="range" id="brightnessSlider" min="0" max="255" value="255" oninput="setBrightness()">
+        <span id="brightnessVal">100%</span>
+      </div>
+      <div class="color-picker-wrap">
+        <label>Max Current:</label>
+        <input type="range" id="currentSlider" min="100" max="5000" step="100" value="2000" oninput="setCurrent()">
+        <span id="currentVal">2000mA</span>
+      </div>
+      <div class="color-picker-wrap">
+        <label>Button LED:</label>
+        <input type="range" id="buttonLedSlider" min="0" max="255" value="255" oninput="setButtonLed()">
+        <span id="buttonLedVal">100%</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <button class="mode-btn" style="background:rgba(0,200,100,0.3);border-color:#0c6" onclick="saveAndQuit()">
+        Save & Exit
+      </button>
+    </div>
+
+    <div class="status">
+      Connected to WiFi-Spectrum<br>
+      Scanning 13 channels
+    </div>
+  </div>
+
+  <script>
+    let state = { mode: 1, cmap: 0, scan: 0, hue: 0, sat: 255, brightness: 255, buttonLed: 255, maxCurrent: 2000 };
+    let polling = true;
+
+    // API calls
+    async function api(endpoint, params = {}) {
+      const url = '/' + endpoint + '?' + new URLSearchParams(params);
+      try {
+        const r = await fetch(url);
+        return r.ok;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    async function fetchStatus() {
+      try {
+        const r = await fetch('/status');
+        if (r.ok) {
+          const data = await r.json();
+          state = { ...state, ...data };
+          updateAllUI();
+        }
+      } catch (e) {}
+    }
+
+    // Setters - update server and local state
+    async function setMode(mode) {
+      state.mode = mode;
+      updateAllUI();
+      await api('mode', { m: mode });
+    }
+
+    async function setCmap(cmap) {
+      state.cmap = cmap;
+      updateAllUI();
+      await api('cmap', { c: cmap });
+    }
+
+    async function setScan(scan) {
+      state.scan = scan;
+      updateAllUI();
+      await api('scan', { s: scan });
+    }
+
+    async function setColor() {
+      state.hue = document.getElementById('hueSlider').value;
+      state.sat = document.getElementById('satSlider').value;
+      updatePreview();
+      await api('color', { h: state.hue, s: state.sat });
+    }
+
+    async function setBrightness() {
+      state.brightness = document.getElementById('brightnessSlider').value;
+      document.getElementById('brightnessVal').textContent = Math.round(state.brightness * 100 / 255) + '%';
+      await api('brightness', { b: state.brightness });
+    }
+
+    async function setCurrent() {
+      state.maxCurrent = document.getElementById('currentSlider').value;
+      document.getElementById('currentVal').textContent = state.maxCurrent + 'mA';
+      await api('current', { c: state.maxCurrent });
+    }
+
+    async function setButtonLed() {
+      state.buttonLed = document.getElementById('buttonLedSlider').value;
+      document.getElementById('buttonLedVal').textContent = Math.round(state.buttonLed * 100 / 255) + '%';
+      await api('buttonled', { b: state.buttonLed });
+    }
+
+    // UI updates
+    function updateAllUI() {
+      // Mode buttons
+      document.querySelectorAll('.mode-btn:not(.scan-btn)').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode == state.mode);
+      });
+      // Show/hide sections
+      document.getElementById('colorSection').style.display = (state.mode == 0) ? 'block' : 'none';
+      document.getElementById('colormapSection').style.display = (state.mode == 1) ? 'block' : 'none';
+      // Colormap buttons
+      document.querySelectorAll('.cmap-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cmap == state.cmap);
+      });
+      // Scan buttons
+      document.querySelectorAll('.scan-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.scan == state.scan);
+      });
+      document.getElementById('scanInfo').textContent =
+        state.scan == 0 ? 'Scanning access points (signal strength)' : 'Monitoring packet traffic per channel';
+      // Sliders (only if not focused to avoid fighting user input)
+      if (document.activeElement.id !== 'hueSlider')
+        document.getElementById('hueSlider').value = state.hue;
+      if (document.activeElement.id !== 'satSlider')
+        document.getElementById('satSlider').value = state.sat;
+      if (document.activeElement.id !== 'brightnessSlider') {
+        document.getElementById('brightnessSlider').value = state.brightness;
+        document.getElementById('brightnessVal').textContent = Math.round(state.brightness * 100 / 255) + '%';
+      }
+      if (document.activeElement.id !== 'currentSlider') {
+        document.getElementById('currentSlider').value = state.maxCurrent;
+        document.getElementById('currentVal').textContent = state.maxCurrent + 'mA';
+      }
+      if (document.activeElement.id !== 'buttonLedSlider') {
+        document.getElementById('buttonLedSlider').value = state.buttonLed;
+        document.getElementById('buttonLedVal').textContent = Math.round(state.buttonLed * 100 / 255) + '%';
+      }
+      updatePreview();
+    }
+
+    function updatePreview() {
+      const hDeg = Math.round(state.hue * 360 / 255);
+      const sPct = Math.round(state.sat * 100 / 255);
+      document.getElementById('solidPreview').style.background = 'hsl(' + hDeg + ', ' + sPct + '%, 50%)';
+    }
+
+    // Save settings and exit AP mode
+    async function saveAndQuit() {
+      polling = false;  // Stop polling
+      await api('quit');
+      document.body.innerHTML = '<div style="text-align:center;padding:50px;color:#fff;font-family:sans-serif;"><h1>Settings Saved</h1><p>AP is shutting down.<br>You can close this page.</p></div>';
+    }
+
+    // Polling for real-time sync
+    async function pollLoop() {
+      while (polling) {
+        await fetchStatus();
+        await new Promise(r => setTimeout(r, 100));
+      }
+    }
+
+    // Initialize
+    fetchStatus().then(() => pollLoop());
+  </script>
+</body>
+</html>
