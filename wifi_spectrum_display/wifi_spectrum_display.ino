@@ -1,12 +1,13 @@
 /*
- * WiFi Spectrum Display for ESP32-C3
+ * WiFi Spectrum Display for ESP32-C3 / ESP32-C5
  *
- * Scans 2.4GHz WiFi channels and displays signal strength on NeoPixels.
+ * Scans WiFi channels and displays signal strength on NeoPixels.
+ * Supports ESP32-C3 (2.4GHz only) and ESP32-C5 (dual-band 2.4+5GHz).
  * Includes a web UI for selecting display modes and colors.
  *
  * Hardware:
- *   - ESP32-C3 board
- *   - WS2812B NeoPixel strip (50 LEDs)
+ *   - ESP32-C3 or ESP32-C5 board
+ *   - WS2812B NeoPixel strip (46 LEDs)
  *   - Connect NeoPixel DATA to GPIO 8
  *   - Connect NeoPixel VCC to 5V, GND to GND
  *
@@ -50,8 +51,26 @@ Preferences preferences;
 #define BUTTON_LED_R      4       // RGB button LED - Red
 #define BUTTON_LED_G      3       // RGB button LED - Green
 #define BUTTON_LED_B      2       // RGB button LED - Blue
-#define NUM_CHANNELS      13
-#define NUM_LEDS          46
+// Board selection: uncomment for ESP32-C5 dual-band support
+// #define BOARD_ESP32_C5
+
+#define NUM_CHANNELS_24GHZ  13
+
+#ifdef BOARD_ESP32_C5
+  #define NUM_CHANNELS_5GHZ   25
+  #define NUM_CHANNELS_TOTAL  (NUM_CHANNELS_24GHZ + NUM_CHANNELS_5GHZ)  // 38
+  #define NUM_LEDS_24GHZ      23
+  #define NUM_LEDS_5GHZ       23
+  #define NUM_LEDS            46
+#else
+  #define NUM_CHANNELS_5GHZ   0
+  #define NUM_CHANNELS_TOTAL  NUM_CHANNELS_24GHZ
+  #define NUM_LEDS_24GHZ      46
+  #define NUM_LEDS_5GHZ       0
+  #define NUM_LEDS            46
+#endif
+
+#define NUM_CHANNELS  NUM_CHANNELS_TOTAL
 
 #define LONG_PRESS_MS     3000    // Hold time for long press (power off)
 #define DOUBLE_PRESS_MS   400     // Max time between presses for double press
@@ -122,7 +141,10 @@ int channelRSSI[NUM_CHANNELS];
 volatile uint32_t channelPackets[NUM_CHANNELS];    // Packet counts per channel
 uint32_t channelPacketsDisplay[NUM_CHANNELS];      // Display values for each channel
 uint8_t ledDisplayBrightness[NUM_LEDS];            // Current brightness per LED (with decay)
-float gaussianKernel[KERNEL_SIZE];                 // Pre-computed Gaussian kernel
+float gaussianKernel24[KERNEL_SIZE];                // Pre-computed Gaussian kernel (2.4GHz band)
+#ifdef BOARD_ESP32_C5
+float gaussianKernel5[KERNEL_SIZE];                 // Pre-computed Gaussian kernel (5GHz band)
+#endif
 
 // Dynamic packet scaling
 uint32_t maxPacketsLastSecond = 1;                 // Max packets seen in last second (for scaling)
@@ -142,7 +164,7 @@ const byte DNS_PORT = 53;
 
 // Scan mode
 ScanMode currentScanMode = SCAN_TRAFFIC;
-uint8_t currentChannel = 1;
+uint8_t currentChannelIndex = 0;              // 0-based unified channel index
 unsigned long lastChannelHop = 0;
 bool promiscuousEnabled = false;
 
@@ -429,7 +451,7 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
 
     <div class="status">
       Connected to WiFi-Spectrum<br>
-      Scanning 13 channels
+      <span id="channelInfo">Scanning 13 channels</span>
     </div>
   </div>
 
@@ -522,6 +544,12 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
       });
       document.getElementById('scanInfo').textContent =
         state.scan == 0 ? 'Scanning access points (signal strength)' : 'Monitoring packet traffic per channel';
+      // Update channel info for dual-band awareness
+      if (state.dualBand) {
+        document.getElementById('channelInfo').textContent = '13 + 25 channels (2.4 + 5 GHz)';
+      } else if (state.totalChannels) {
+        document.getElementById('channelInfo').textContent = 'Scanning ' + state.totalChannels + ' channels';
+      }
       // Sliders (only if not focused to avoid fighting user input)
       if (document.activeElement.id !== 'hueSlider')
         document.getElementById('hueSlider').value = state.hue;
@@ -571,39 +599,115 @@ const char HTML_PAGE[] PROGMEM = R"rawliteral(
 )rawliteral";
 
 // =============================================================================
+// 5GHz Channel Table & Helpers
+// =============================================================================
+
+#ifdef BOARD_ESP32_C5
+// 5GHz WiFi channel numbers (UNII-1, UNII-2, UNII-2 Extended, UNII-3)
+const uint8_t CHANNELS_5GHZ[25] = {
+  36, 40, 44, 48,           // UNII-1
+  52, 56, 60, 64,           // UNII-2
+  100, 104, 108, 112, 116,  // UNII-2 Extended
+  120, 124, 128, 132, 136,
+  140, 144,
+  149, 153, 157, 161, 165   // UNII-3
+};
+#endif
+
+// Convert a WiFi channel number to a unified 0-based index
+// Returns -1 if channel not recognized
+int wifiChannelToIndex(int wifiCh) {
+  // 2.4GHz: channels 1-13 -> indices 0-12
+  if (wifiCh >= 1 && wifiCh <= 13) {
+    return wifiCh - 1;
+  }
+#ifdef BOARD_ESP32_C5
+  // 5GHz: lookup in table -> indices 13-37
+  for (int i = 0; i < NUM_CHANNELS_5GHZ; i++) {
+    if (CHANNELS_5GHZ[i] == wifiCh) {
+      return NUM_CHANNELS_24GHZ + i;
+    }
+  }
+#endif
+  return -1;
+}
+
+// Convert a unified 0-based index to a WiFi channel number
+int indexToWifiChannel(int idx) {
+  // 2.4GHz: indices 0-12 -> channels 1-13
+  if (idx >= 0 && idx < NUM_CHANNELS_24GHZ) {
+    return idx + 1;
+  }
+#ifdef BOARD_ESP32_C5
+  // 5GHz: indices 13-37 -> channel numbers from table
+  int idx5 = idx - NUM_CHANNELS_24GHZ;
+  if (idx5 >= 0 && idx5 < NUM_CHANNELS_5GHZ) {
+    return CHANNELS_5GHZ[idx5];
+  }
+#endif
+  return -1;
+}
+
+// Check if a unified index is in the 5GHz band
+bool isIndex5GHz(int idx) {
+  return idx >= NUM_CHANNELS_24GHZ;
+}
+
+// =============================================================================
 // Gaussian Kernel
 // =============================================================================
 
-void computeGaussianKernel() {
-  float ledsPerChannel = (float)NUM_LEDS / NUM_CHANNELS;
+// Compute a Gaussian kernel for a given LED count and channel count
+void computeGaussianKernelForBand(float* kernel, int numLeds, int numChannels, const char* bandName) {
+  float ledsPerChannel = (float)numLeds / numChannels;
   float sigma = 0.5 * ledsPerChannel;
 
   // Compute Gaussian values
   for (int i = 0; i < KERNEL_SIZE; i++) {
     int x = i - KERNEL_RADIUS;
-    gaussianKernel[i] = exp(-(x * x) / (2.0 * sigma * sigma));
+    kernel[i] = exp(-(x * x) / (2.0 * sigma * sigma));
   }
 
   // Normalize so center (peak) = 1.0
-  float peak = gaussianKernel[KERNEL_RADIUS];
+  float peak = kernel[KERNEL_RADIUS];
   for (int i = 0; i < KERNEL_SIZE; i++) {
-    gaussianKernel[i] /= peak;
+    kernel[i] /= peak;
   }
 
   // Debug print
-  Serial.print("Gaussian kernel (sigma=");
+  Serial.print("Gaussian kernel ");
+  Serial.print(bandName);
+  Serial.print(" (sigma=");
   Serial.print(sigma);
   Serial.print("): ");
   for (int i = 0; i < KERNEL_SIZE; i++) {
-    Serial.print(gaussianKernel[i], 2);
+    Serial.print(kernel[i], 2);
     Serial.print(" ");
   }
   Serial.println();
 }
 
-// Get the LED position (center) for a given channel (0-indexed)
+void computeGaussianKernel() {
+  computeGaussianKernelForBand(gaussianKernel24, NUM_LEDS_24GHZ, NUM_CHANNELS_24GHZ, "2.4GHz");
+#ifdef BOARD_ESP32_C5
+  computeGaussianKernelForBand(gaussianKernel5, NUM_LEDS_5GHZ, NUM_CHANNELS_5GHZ, "5GHz");
+#endif
+}
+
+// Get the LED position (center) for a given unified channel index (0-based)
 float getChannelLedPosition(int ch) {
+#ifdef BOARD_ESP32_C5
+  if (ch < NUM_CHANNELS_24GHZ) {
+    // 2.4GHz band: indices 0-12 -> LEDs 0-22
+    return (float)ch * (NUM_LEDS_24GHZ - 1) / (NUM_CHANNELS_24GHZ - 1);
+  } else {
+    // 5GHz band: indices 13-37 -> LEDs 23-45
+    int idx5 = ch - NUM_CHANNELS_24GHZ;
+    return NUM_LEDS_24GHZ + (float)idx5 * (NUM_LEDS_5GHZ - 1) / (NUM_CHANNELS_5GHZ - 1);
+  }
+#else
   return (float)ch * (NUM_LEDS - 1) / (NUM_CHANNELS - 1);
+#endif
 }
 
 // =============================================================================
@@ -696,7 +800,12 @@ void setup() {
   Serial.println();
   Serial.println("=================================");
   Serial.println("  WiFi Spectrum Display v2.0");
+#ifdef BOARD_ESP32_C5
+  Serial.println("  ESP32-C5 + NeoPixels + Web UI");
+  Serial.println("  Dual-band: 2.4 GHz + 5 GHz");
+#else
   Serial.println("  ESP32-C3 + NeoPixels + Web UI");
+#endif
   Serial.println("=================================");
 
   // Initialize button (internal pull-up)
@@ -987,9 +1096,10 @@ void scanWiFi() {
       int channel = WiFi.channel(i);
       int rssi = WiFi.RSSI(i);
 
-      if (channel >= 1 && channel <= NUM_CHANNELS) {
-        if (rssi > channelRSSI[channel - 1]) {
-          channelRSSI[channel - 1] = rssi;
+      int idx = wifiChannelToIndex(channel);
+      if (idx >= 0) {
+        if (rssi > channelRSSI[idx]) {
+          channelRSSI[idx] = rssi;
         }
         // Track min/max for dynamic scaling
         if (rssi < currentRssiMin) currentRssiMin = rssi;
@@ -1012,8 +1122,8 @@ void scanWiFi() {
 
 // Callback for each received packet
 void IRAM_ATTR promiscuousCallback(void* buf, wifi_promiscuous_pkt_type_t type) {
-  if (currentChannel >= 1 && currentChannel <= NUM_CHANNELS) {
-    channelPackets[currentChannel - 1]++;
+  if (currentChannelIndex < NUM_CHANNELS) {
+    channelPackets[currentChannelIndex]++;
   }
 }
 
@@ -1071,8 +1181,8 @@ void startPromiscuous() {
   esp_wifi_set_promiscuous(true);
 
   // Set initial channel
-  currentChannel = 1;
-  esp_wifi_set_channel(currentChannel, WIFI_SECOND_CHAN_NONE);
+  currentChannelIndex = 0;
+  esp_wifi_set_channel(indexToWifiChannel(0), WIFI_SECOND_CHAN_NONE);
 
   promiscuousEnabled = true;
   Serial.println("Promiscuous mode enabled");
@@ -1088,7 +1198,7 @@ void stopPromiscuous() {
 
 void printChannelStats() {
   for (int i = 0; i < NUM_CHANNELS; i++) {
-    Serial.printf("ch%d:%lu", i + 1, channelPacketsDisplay[i]);
+    Serial.printf("ch%d:%lu", indexToWifiChannel(i), channelPacketsDisplay[i]);
     if (i < NUM_CHANNELS - 1) Serial.print(",");
   }
   Serial.println();
@@ -1097,7 +1207,7 @@ void printChannelStats() {
 void printRawPackets() {
   Serial.print("RAW: ");
   for (int i = 0; i < NUM_CHANNELS; i++) {
-    Serial.printf("%lu", channelPackets[i]);
+    Serial.printf("ch%d:%lu", indexToWifiChannel(i), channelPackets[i]);
     if (i < NUM_CHANNELS - 1) Serial.print(",");
   }
   Serial.println();
@@ -1105,7 +1215,7 @@ void printRawPackets() {
 
 void hopChannel() {
   // Update display value for the channel we just listened on (before hopping)
-  int idx = currentChannel - 1;
+  int idx = currentChannelIndex;
   channelPacketsDisplay[idx] = channelPackets[idx];  // Direct assignment
 
   // Track max packets for dynamic scaling
@@ -1119,14 +1229,14 @@ void hopChannel() {
   applyChannelGaussian(idx);
 
   // Move to next channel
-  currentChannel++;
-  if (currentChannel > NUM_CHANNELS) {
-    currentChannel = 1;
+  currentChannelIndex++;
+  if (currentChannelIndex >= NUM_CHANNELS) {
+    currentChannelIndex = 0;
     // Print stats after each full sweep
     printChannelStats();
   }
 
-  esp_wifi_set_channel(currentChannel, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_channel(indexToWifiChannel(currentChannelIndex), WIFI_SECOND_CHAN_NONE);
 }
 
 // =============================================================================
@@ -1268,11 +1378,22 @@ void applyChannelGaussian(int ch) {
   float centerLed = getChannelLedPosition(ch);
   int centerInt = (int)(centerLed + 0.5);
 
+  // Select correct kernel and LED boundaries per band
+#ifdef BOARD_ESP32_C5
+  float* kernel = isIndex5GHz(ch) ? gaussianKernel5 : gaussianKernel24;
+  int ledMin = isIndex5GHz(ch) ? NUM_LEDS_24GHZ : 0;
+  int ledMax = isIndex5GHz(ch) ? NUM_LEDS : NUM_LEDS_24GHZ;
+#else
+  float* kernel = gaussianKernel24;
+  int ledMin = 0;
+  int ledMax = NUM_LEDS;
+#endif
+
   // Apply kernel centered at this channel's LED position
   for (int k = 0; k < KERNEL_SIZE; k++) {
     int ledIdx = centerInt + (k - KERNEL_RADIUS);
-    if (ledIdx >= 0 && ledIdx < NUM_LEDS) {
-      uint8_t contribution = (uint8_t)(brightness * gaussianKernel[k]);
+    if (ledIdx >= ledMin && ledIdx < ledMax) {
+      uint8_t contribution = (uint8_t)(brightness * kernel[k]);
       // Instant rise: only set if higher than current
       if (contribution > ledDisplayBrightness[ledIdx]) {
         ledDisplayBrightness[ledIdx] = contribution;
@@ -1439,7 +1560,14 @@ void handleStatus() {
                 ",\"sat\":" + String(solidSat) +
                 ",\"brightness\":" + String(maxBrightness) +
                 ",\"buttonLed\":" + String(buttonLedBrightness) +
-                ",\"maxCurrent\":" + String(maxMilliamps) + "}";
+                ",\"maxCurrent\":" + String(maxMilliamps) +
+                ",\"totalChannels\":" + String(NUM_CHANNELS) +
+#ifdef BOARD_ESP32_C5
+                ",\"dualBand\":true" +
+#else
+                ",\"dualBand\":false" +
+#endif
+                String("}");
   server.send(200, "application/json", json);
 }
 
